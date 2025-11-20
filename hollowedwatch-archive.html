@@ -1,0 +1,303 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>The Hollowed — Field Notes (circa 2010)</title>
+<style>
+  /* 2010 geocities vibes */
+  body{
+    background: linear-gradient(#000814, #001a33);
+    color:#e6e6e6;
+    font-family: "Trebuchet MS", Arial, sans-serif;
+    margin:0;
+    padding:0;
+  }
+  .wrap{ max-width:980px; margin:18px auto; border:4px dashed #222; background:rgba(0,0,0,0.6); box-shadow:0 0 30px #000;}
+  header{ padding:14px; background:linear-gradient(#111,#000); border-bottom:4px solid #330000; display:flex; align-items:center; gap:12px;}
+  h1{ margin:0; font-size:28px; letter-spacing:1px; color:#fff; text-shadow:0 1px 0 #000; }
+  .sub{ color:#ffcf33; font-size:12px; margin-top:4px; }
+  nav{ background:#111; padding:6px 12px; border-bottom:3px solid #222; }
+  nav a{ color:#9ee; text-decoration:none; margin-right:10px; font-weight:bold; }
+  .container{ display:flex; gap:12px; padding:12px; }
+  .main{ flex:3; background:rgba(255,255,255,0.02); padding:12px; border:2px dotted #111; min-height:420px;}
+  .side{ flex:1; background:rgba(0,0,0,0.35); padding:10px; border-left:2px solid #221; }
+  .marquee{ background:#110000; padding:6px; color:#fff; font-weight:bold; border:2px solid #330; margin-bottom:10px; }
+  .evidence{ border:2px solid #222; padding:8px; margin:8px 0; background:linear-gradient(#071,#001); color:#fff; }
+  .ghost-img{ width:100%; max-height:220px; display:block; margin:8px auto; filter:contrast(120%) saturate(10%); }
+  .btn{ display:inline-block; padding:6px 10px; background:#330000; color:#fff; text-decoration:none; border-radius:3px; margin-top:6px; }
+  .guestbook{ margin-top:12px; }
+  .entry{ padding:8px; border-bottom:1px dashed #222; font-size:13px; }
+  footer{ padding:10px; color:#999; font-size:12px; background:linear-gradient(#000,#020202); border-top:3px solid #111; text-align:center; }
+
+  /* Retro decorations */
+  .counter{ font-weight:bold; color:#ffcccc; font-family: "Courier New", monospace; background:#000; padding:6px; display:inline-block; }
+  .blink{ animation:blink 1.2s steps(2, start) infinite; color:#ff3333; font-weight:bold; }
+  @keyframes blink{ 50%{ opacity:0.15; } }
+
+  /* "eyes" svg style */
+  .eyes{ display:flex; gap:8px; justify-content:center; margin-top:8px; }
+  .eye{ width:18px; height:18px; border-radius:50%; background:#fff; box-shadow:0 0 10px rgba(255,255,255,0.9); }
+  .eye.red{ background:#ff2b2b; box-shadow:0 0 16px rgba(255,43,43,0.9); }
+
+  /* glitch text */
+  .glitch{ position:relative; color:#fff; }
+  .glitch::before, .glitch::after{
+    content:attr(data-text);
+    position:absolute;
+    left:0; top:0;
+    opacity:0.7;
+    clip:rect(0,900px,0,0);
+  }
+  .glitch::before{ left:2px; text-shadow:-2px 0 #0ff; animation:glitchTop 2.7s infinite linear; }
+  .glitch::after{ left:-2px; text-shadow:-2px 0 #f0f; animation:glitchBot 3.1s infinite linear; }
+  @keyframes glitchTop{ 0%{ clip:rect(0,900px,0,0);} 10%{ clip:rect(0,900px,40px,0);} 20%{ clip:rect(0,900px,0,0);} 30%{ clip:rect(30px,900px,60px,0);} 100%{ clip:rect(0,900px,0,0);} }
+  @keyframes glitchBot{ 0%{ clip:rect(0,900px,0,0);} 10%{ clip:rect(10px,900px,50px,0);} 25%{ clip:rect(0,900px,0,0);} 40%{ clip:rect(45px,900px,80px,0);} 100%{ clip:rect(0,900px,0,0);} }
+
+  /* subtle 'ink' streaks left by hover */
+  .main:after{
+    content:"";
+    pointer-events:none;
+    position:absolute;
+  }
+
+  /* old-school guestbook form inputs */
+  input[type="text"], textarea{ width:100%; padding:6px; background:#000; color:#fff; border:1px solid #333; box-sizing:border-box; margin-bottom:8px; }
+  input[type="submit"]{ background:#004; color:#fff; padding:8px 12px; border:none; cursor:pointer; }
+  .warning{ color:#ff9; background:#330; padding:6px; display:block; margin-bottom:8px; border-radius:4px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <svg width="60" height="60" viewBox="0 0 64 64" aria-hidden>
+      <rect width="64" height="64" fill="#000"/>
+      <!-- silhouette symbol -->
+      <g transform="translate(12,8)">
+        <ellipse cx="20" cy="26" rx="14" ry="16" fill="#000" stroke="#222"/>
+        <circle cx="12" cy="18" r="3" fill="#fff" class="eye-eye"/>
+        <circle cx="28" cy="18" r="3" fill="#ff2b2b" class="eye-eye"/>
+      </g>
+    </svg>
+    <div>
+      <h1>The Hollowed — Field Notes</h1>
+      <div class="sub">Anomalous reports / compiled by independent archivists (unverified)</div>
+    </div>
+  </header>
+
+  <nav>
+    <a href="#overview">Overview</a>
+    <a href="#cases">Notable Cases</a>
+    <a href="#symptoms">Infection</a>
+    <a href="#guest">Guestbook</a>
+    <span style="float:right;" class="counter">VISITORS: <span id="visCount">000123</span></span>
+  </nav>
+
+  <div class="container">
+    <main class="main" role="main">
+      <div class="marquee"><marquee behavior="scroll" scrollamount="4">ARCHIVE: The Hollowed — reports collected 1998–2019 — SOURCE: Unknown</marquee></div>
+
+      <section id="overview">
+        <h2 class="glitch" data-text="OVERVIEW">OVERVIEW</h2>
+        <p>
+          The <strong>Hollowed</strong> are described in multiple independent accounts as tall, featureless humanoids composed of a viscous black substance (commonly likened to <em>ink</em> or <em>ichor</em>). Observers report small, circular <strong>white or red</strong> eyes. The phenomenon is notable for two primary threats: direct aggression (physical attacks) and an <em>identity-replacement</em> infection that converts victims into new Hollowed forms.
+        </p>
+
+        <div class="evidence" style="background:linear-gradient(#001,#002);">
+          <strong>FIELD NOTE (excerpt)</strong>
+          <p style="font-size:13px; color:#ddd; margin:6px 0;">
+            "It stood in the doorway. No face. Two pinpricks of light — one red — like lenses. When it touched Jeremy he didn't die. He just... stopped being Jeremy." — Anonymous, 2011
+          </p>
+        </div>
+
+        <figure>
+          <!-- simple SVG "sighting" silhouette (no real photo) -->
+          <svg class="ghost-img" viewBox="0 0 200 120" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="ink figure silhouette">
+            <rect width="100%" height="100%" fill="#071624"/>
+            <g id="hollowed" transform="translate(60,10)">
+              <path d="M20 0 C5 0 0 15 0 28 C0 50 0 60 15 70 C18 75 30 78 40 78 C50 78 62 75 65 70 C80 60 80 45 80 28 C80 15 75 0 60 0 Z" fill="#000"/>
+              <circle cx="22" cy="28" r="3" fill="#fff" id="eye1"/>
+              <circle cx="48" cy="28" r="3" fill="#ff2b2b" id="eye2"/>
+              <path d="M0 85 C20 92 40 92 65 85" stroke="#000" stroke-width="6" fill="none" opacity="0.6"/>
+            </g>
+          </svg>
+        </figure>
+      </section>
+
+      <section id="cases">
+        <h2 class="glitch" data-text="NOTABLE CASES">NOTABLE CASES</h2>
+        <ul>
+          <li><strong>Redwater, TX — 2005:</strong> Security cam captured a dark humanoid entering an apartment before the occupant reappeared without memory.</li>
+          <li><strong>Cedar Ridge High — 2018:</strong> Multiple students reported a peer covered in black streaks who later exhibited flat affect and repetitive speech.</li>
+          <li><strong>I-70 Rest Stop — 2021:</strong> Truck driver reported a figure leaving black prints on asphalt; nearby dashcam corrupted for 2 minutes.</li>
+        </ul>
+      </section>
+
+      <section id="symptoms">
+        <h2 class="glitch" data-text="INFECTION / 'HOLLOWING'">INFECTION / "HOLLOWING"</h2>
+        <p>Community-compiled pattern:</p>
+        <ol>
+          <li>Observation — repeated glimpses near targeted individuals.</li>
+          <li>Residue — black streaks or drips noticed on clothing or walls.</li>
+          <li>Behavioral shift — monotone speech, forgetfulness, loss of motivation.</li>
+          <li>Conversion or Collapse — subject either collapses (attack) or reawakens functioning as an infected agent.</li>
+        </ol>
+        <p class="warning">WARNING: Reports indicate prolonged exposure increases risk of takeover. Remain skeptical; none of these incidents are officially verified.</p>
+      </section>
+
+      <section id="guest" class="guestbook">
+        <h2 class="glitch" data-text="GUESTBOOK">GUESTBOOK</h2>
+        <div id="entries">
+          <div class="entry"><strong>2011-03-08</strong> — saw something behind the barn. my dog won't come back. — <em>R.M.</em></div>
+          <div class="entry"><strong>2014-10-12</strong> — lights went weird and he stared at me. I don't go back to that apartment. — <em>anonymous</em></div>
+          <div class="entry"><strong>2019-07-26</strong> — i've had nightmares since the highway thing. there was ink on my sleeve. — <em>L.</em></div>
+        </div>
+
+        <!-- fake form (only local JS, nothing sent anywhere) -->
+        <form id="gbform" onsubmit="return addEntry();">
+          <input type="text" id="name" placeholder="name (or anonymous)">
+          <textarea id="msg" rows="3" placeholder="your experience / note"></textarea>
+          <input type="submit" value="sign guestbook">
+        </form>
+      </section>
+
+    </main>
+
+    <aside class="side">
+      <div style="padding:6px;">
+        <strong>site last updated:</strong><br> <span id="last-upd">2010-11-02</span><br><br>
+        <strong>Status:</strong><br>Unverified reports / community archive<br><br>
+
+        <div class="eyes" title="eyes demo">
+          <div class="eye"></div>
+          <div class="eye red"></div>
+        </div>
+
+        <div style="margin-top:12px;">
+          <strong>Quick Links</strong>
+          <ul style="padding-left:16px; margin-top:6px;">
+            <li><a href="#overview">Overview</a></li>
+            <li><a href="#cases">Cases</a></li>
+            <li><a href="#symptoms">Symptoms</a></li>
+            <li><a href="#guest">Guestbook</a></li>
+          </ul>
+        </div>
+
+        <div style="margin-top:10px; font-size:12px; color:#bbb;">
+          <strong>archives:</strong><br>
+          <a href="#" onclick="return fakeDL()">download incident log (pdf)</a><br>
+          <a href="#" onclick="return fakeCam()">view dashcam clip</a>
+        </div>
+      </div>
+    </aside>
+  </div>
+
+  <footer>
+    This site is an <em>independent archive mockup</em> — content unverified. Use caution. — archived by <strong>HollowedWatch</strong>
+  </footer>
+</div>
+
+<script>
+  // visitor counter (retro look)
+  (function(){
+    var el = document.getElementById('visCount');
+    var base = 123;
+    var v = base + Math.floor((Date.now()/1000000)%999);
+    el.textContent = String(v).padStart(6,'0');
+  })();
+
+  // guestbook logic (local only)
+  function addEntry(){
+    var name = document.getElementById('name').value || 'anonymous';
+    var msg = document.getElementById('msg').value || '';
+    if(msg.trim().length<3){ alert('say something'); return false; }
+    var cont = document.getElementById('entries');
+    var d = new Date();
+    var date = d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0');
+    var div = document.createElement('div');
+    div.className='entry';
+    div.innerHTML = '<strong>'+date+'</strong> — '+escapeHtml(msg)+' — <em>'+escapeHtml(name)+'</em>';
+    cont.insertBefore(div, cont.firstChild);
+
+    // small "infection" easter: randomly replace a name with HOLLOWED if message contains "ink"
+    if(msg.toLowerCase().includes('ink') && Math.random() < 0.45){
+      setTimeout(function(){ div.innerHTML = '<strong>'+date+'</strong> — '+escapeHtml(msg)+' — <em>HOLLOWED</em>';}, 900);
+    }
+
+    document.getElementById('name').value=''; document.getElementById('msg').value='';
+    return false;
+  }
+
+  function escapeHtml(s){ return s.replace(/[&<>"']/g, function(m){ return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]; }); }
+
+  // fake downloads that actually trigger a "glitch" effect (client-side only)
+  function fakeDL(){
+    alert('Preparing download... (file appears corrupted)');
+    glitchSite();
+    return false;
+  }
+  function fakeCam(){
+    alert('Video loading... corrupted frames detected');
+    glitchSite();
+    return false;
+  }
+
+  // glitch effect — toggles 'glitched' eyes and distorts text
+  function glitchSite(){
+    document.body.style.transition='filter 0.4s';
+    document.body.style.filter='grayscale(0.9) contrast(1.4) hue-rotate(-20deg)';
+    var eyes = document.querySelectorAll('.eye');
+    eyes.forEach(function(e,i){
+      setTimeout(function(){
+        e.style.transform='scale(1.8)';
+        e.style.opacity='0.9';
+      }, 200 + i*120);
+    });
+    setTimeout(function(){
+      // flicker some guestbook entries to "HOLLOWED"
+      var entries = document.querySelectorAll('.entry');
+      entries.forEach(function(en,i){
+        if(Math.random() < 0.2){
+          var html = en.innerHTML;
+          en.dataset.original = html;
+          en.innerHTML = html.replace(/<em>.*?<\/em>/,'<em>HOLLOWED</em>');
+        }
+      });
+      // revert slowly
+      setTimeout(function(){
+        document.body.style.filter='';
+      }, 4000);
+      setTimeout(function(){
+        eyes.forEach(function(e){ e.style.transform=''; e.style.opacity=''; });
+      }, 4200);
+    }, 800);
+  }
+
+  // subtle eye blink animation (red/white swap)
+  (function(){
+    var eye1 = document.getElementById('eye1');
+    var eye2 = document.getElementById('eye2');
+    var toggle=false;
+    setInterval(function(){
+      toggle = !toggle;
+      if(toggle){
+        eye1.setAttribute('fill','#fff'); eye2.setAttribute('fill','#ff2b2b');
+      } else {
+        eye1.setAttribute('fill','#ddd'); eye2.setAttribute('fill','#fff');
+      }
+    }, 1500);
+  })();
+
+  // optional: on page load, append an extra 'unverified' note to make it look sketchy
+  (function(){
+    var foot = document.querySelector('footer');
+    var note = document.createElement('div');
+    note.style.color='#ffb3b3';
+    note.style.fontSize='12px';
+    note.style.marginTop='8px';
+    note.textContent='NOTE: The files linked here were archived from an anonymous mirror; source credibility unknown.';
+    foot.appendChild(note);
+  })();
+</script>
+</body>
+</html>
